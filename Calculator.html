@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="Calculator.css">
+
+    <title>Calculator</title>
+</head>
+
+<body>
+    <!-- basic Calculator -->
+    <div class="maindiv mx-auto p-1 shadow">
+
+        <div class="div4 my-1 border">
+            <div class=" text-right" id="div1">
+
+            </div>
+
+            <div class=" text-right" id="div2">
+
+            </div>
+
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn btna border flex-fill m-0">MC</button>
+            <button class="btn btna border flex-fill">MR</button>
+            <button class="btn btna border flex-fill">M+</button>
+            <button class="btn btna border flex-fill">M-</button>
+            <button class="btn btna border flex-fill">MS</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border flex-fill m-0" onclick="perc()">%</button>
+            <button class="btn border flex-fill" onclick="srt()"><sup>2</sup>&#8730 X</button>
+            <button class="btn border flex-fill" onclick="sqe()">X <sup>2</sup></button>
+            <button class="btn border flex-fill" onclick="inv()">1/X</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border  flex-fill m-0" onclick="getClear()">CE</button>
+            <button class="btn border flex-fill" onclick="getCle()">C</button>
+            <button class="btn border  flex-fill" onclick="getCle()">&larr;</button>
+            <button class="btn border  flex-fill" onclick="num('/')">/</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border font-weight-bold flex-fill m-0" onclick="num('7')">7</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="num('8')">8</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="num('9')">9</button>
+            <button class="btn border flex-fill" onclick="num('*')">x</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border font-weight-bold flex-fill m-0" onclick="num('4')">4</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="num('5')">5</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="num('6')">6</button>
+            <button class="btn border flex-fill" onclick="num('-')">-</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border font-weight-bold flex-fill m-0" onclick="num('1')">1</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="num('2')">2</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="num('3')">3</button>
+            <button class="btn border flex-fill" onclick="num('+')">+</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border flex-fill m-0" onclick="neg()">+/-</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="num('0')">0</button>
+            <button class="btn border flex-fill" onclick="num('.')">.</button>
+            <button class="btn border flex-fill" onclick="ops()">=</button>
+        </div>
+
+    </div>
+
+    <!-- scientific calculator -->
+    <div class="maindiv mb-4 mx-auto p-1 shadow">
+
+        <div class="div4 my-1 border">
+            <div class=" text-right" id="div3">
+
+            </div>
+
+            <div class=" text-right" id="div4">
+
+            </div>
+
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn btna border flex-fill">MC</button>
+            <button class="btn btna border flex-fill">MR</button>
+            <button class="btn btna border flex-fill">M+</button>
+            <button class="btn btna border flex-fill">M-</button>
+            <button class="btn btna border flex-fill">MS</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border flex-fill" onclick="sqre()"><i>X <sup>2</sup></i></button>
+            <button class="btn border flex-fill" onclick="expo('^')"><i>X <sup>y</sup></i></button>
+            <button class="btn border flex-fill" onclick="sinv('Math.sin(')">sin</button>
+            <button class="btn border flex-fill" onclick="cosv()">cos</button>
+            <button class="btn border flex-fill" onclick="tanv()">tan</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border flex-fill" onclick="sqroot()"><sup>2</sup>&#8730 X</button>
+            <button class="btn border flex-fill" onclick="tenpow()">10 <sup>X</sup></button>
+            <button class="btn border flex-fill" onclick="logo()">log</button>
+            <button class="btn border flex-fill" onclick="nums('x')">Exp</button>
+            <button class="btn border flex-fill" onclick="modd('%')">Mod</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border flex-fill">&#8657</button>
+            <button class="btn border  flex-fill" onclick="getDelete()">CE</button>
+            <button class="btn border flex-fill" onclick="getDel()">C</button>
+            <button class="btn border  flex-fill" onclick="getDel()">&larr;</button>
+            <button class="btn border  flex-fill" onclick="nums('/')">/</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border flex-fill" onclick="pie()">&pi;</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="nums('7')">7</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="nums('8')">8</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="nums('9')">9</button>
+            <button class="btn border flex-fill" onclick="nums('*')">x</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border flex-fill" onclick="factorial()">n!</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="nums('4')">4</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="nums('5')">5</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="nums('6')">6</button>
+            <button class="btn border flex-fill" onclick="nums('-')">-</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border flex-fill" onclick="negt()">+/-</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="nums('1')">1</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="nums('2')">2</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="nums('3')">3</button>
+            <button class="btn border flex-fill" onclick="nums('+')">+</button>
+        </div>
+
+        <div class=" mb-1 d-flex">
+            <button class="btn border flex-fill" onclick="nums('(')">(</button>
+            <button class="btn border flex-fill" onclick="nums(')')">)</button>
+            <button class="btn border font-weight-bold flex-fill" onclick="nums('0')">0</button>
+            <button class="btn border flex-fill" onclick="nums('.')">.</button>
+            <button class="btn border flex-fill" onclick="opts()">=</button>
+        </div>
+
+    </div>
+    <!-- JS basic -->
+    <script type="text/javascript" src="Basic-calculator.js"></script>
+
+    <!-- JS scientific -->
+    <script type="text/javascript" src="Sci-calculator.js"></script>
+</body>
+
+</html>
